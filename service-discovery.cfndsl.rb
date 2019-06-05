@@ -10,9 +10,9 @@ CloudFormation do
       Vpc Ref(:VPCId)
     }
 
-    Output(:PrivateDnsNamespace) {
+    Output(:NamespaceId) {
       Value(Ref(:PrivateDnsNamespace))
-      Export FnSub("${EnvironmentName}-#{component_name}-PrivateDnsNamespace")
+      Export FnSub("${EnvironmentName}-#{component_name}-NamespaceId")
     }
   when 'public'
     ServiceDiscovery_PrivateDnsNamespace(:PublicDnsNamespace) {
@@ -20,9 +20,9 @@ CloudFormation do
       Name FnSub(namespace)
     }
 
-    Output(:PublicDnsNamespace) {
+    Output(:NamespaceId) {
       Value(Ref(:PublicDnsNamespace))
-      Export FnSub("${EnvironmentName}-#{component_name}-PublicDnsNamespace")
+      Export FnSub("${EnvironmentName}-#{component_name}-NamespaceId")
     }
   when 'http'
     ServiceDiscovery_HttpNamespace(:HttpNamespace) {
@@ -30,9 +30,9 @@ CloudFormation do
       Name FnSub(namespace)
     }
 
-    Output(:HttpNamespace) {
+    Output(:NamespaceId) {
       Value(Ref(:HttpNamespace))
-      Export FnSub("${EnvironmentName}-#{component_name}-HttpNamespace")
+      Export FnSub("${EnvironmentName}-#{component_name}-NamespaceId")
     }
   else
     raise "namespace `type` must be one of public | private | http"
