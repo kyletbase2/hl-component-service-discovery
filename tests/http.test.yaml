@@ -1,0 +1,7 @@
+test_metadata:
+  type: config
+  name: http
+  description: test the http namespace
+
+namespace: dev.local
+type: http

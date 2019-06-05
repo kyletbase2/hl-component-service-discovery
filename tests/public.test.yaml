@@ -1,0 +1,7 @@
+test_metadata:
+  type: config
+  name: public
+  description: test the public namespace
+
+namespace: dev.local
+type: public

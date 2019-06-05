@@ -1,6 +1,6 @@
 test_metadata:
   type: config
   name: default
-  description: test a basic config
+  description: test a private namespace
 
 namespace: dev.local
