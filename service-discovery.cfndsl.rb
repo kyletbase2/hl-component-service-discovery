@@ -15,7 +15,7 @@ CloudFormation do
       Export FnSub("${EnvironmentName}-#{component_name}-NamespaceId")
     }
   when 'public'
-    ServiceDiscovery_PrivateDnsNamespace(:PublicDnsNamespace) {
+    ServiceDiscovery_PublicDnsNamespace(:PublicDnsNamespace) {
       Description FnSub("Public namespace #{namespace} for the ${EnvironmentName} environment")
       Name FnSub(namespace)
     }
