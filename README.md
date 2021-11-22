@@ -5,7 +5,7 @@
 | ---- | --- | ------- | ------ | ---- | -------------- |
 | EnvironmentName | Tagging | dev | true | string
 | EnvironmentType | Tagging | development | true | string | ['development','production']
-| VPCId | Security Groups | None | false | AWS::EC2::VPC::Id
+| VPCId | VPC ID to connect to | None | false | AWS::EC2::VPC::Id
 
 ## Outputs/Exports
 
