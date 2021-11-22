@@ -1,6 +1,36 @@
 # service-discovery CfHighlander component
+## Parameters
 
-[![Build Status](https://travis-ci.com/theonestack/hl-component-service-discovery.svg?branch=master)](https://travis-ci.com/theonestack/hl-component-service-discovery)
+| Name | Use | Default | Global | Type | Allowed Values |
+| ---- | --- | ------- | ------ | ---- | -------------- |
+| EnvironmentName | Tagging | dev | true | string
+| EnvironmentType | Tagging | development | true | string | ['development','production']
+| VPCId | Security Groups | None | false | AWS::EC2::VPC::Id
+
+## Outputs/Exports
+
+| Name | Value | Exported |
+| ---- | ----- | -------- |
+| NamespaceId | The namespace ID of the service discovery zone | true
+
+
+## Included Components
+[lib-ec2](https://github.com/theonestack/hl-component-lib-ec2)
+[lib-iam](https://github.com/theonestack/hl-component-lib-iam)
+
+## Example Configuration
+### Highlander
+```
+  Component name: 'servicediscovery', template: 'service-discovery' do
+    parameter name: 'VPCId', value: cfout('vpcv2', 'VPCId')
+  end
+
+```
+### Service-Discovery Configuration
+```
+namespace: myappcloud
+type: private
+```
 
 ## Cfhighlander Setup
 
